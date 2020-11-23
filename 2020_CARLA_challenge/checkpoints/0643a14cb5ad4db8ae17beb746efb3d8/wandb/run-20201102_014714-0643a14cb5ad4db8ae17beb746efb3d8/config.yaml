@@ -1,0 +1,46 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.8.29
+    code_path: code/carla_project/src/map_model.py
+    framework: torch
+    is_jupyter_run: false
+    python_version: 3.6.9
+batch_size:
+  desc: null
+  value: 32
+command_coefficient:
+  desc: null
+  value: 0.1
+dataset_dir:
+  desc: null
+  value: autopilot_dataset
+hack:
+  desc: null
+  value: false
+heatmap_radius:
+  desc: null
+  value: 5
+id:
+  desc: null
+  value: 0643a14cb5ad4db8ae17beb746efb3d8
+lr:
+  desc: null
+  value: 0.0001
+max_epochs:
+  desc: null
+  value: 50
+sample_by:
+  desc: null
+  value: even
+save_dir:
+  desc: null
+  value: checkpoints/0643a14cb5ad4db8ae17beb746efb3d8
+temperature:
+  desc: null
+  value: 10.0
+weight_decay:
+  desc: null
+  value: 0.0

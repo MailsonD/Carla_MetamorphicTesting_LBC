@@ -1,0 +1,30 @@
+{
+    "root": "/home/mailson/Programas/2020_CARLA_challenge",
+    "program": "/home/mailson/Programas/2020_CARLA_challenge/carla_project/src/map_model.py",
+    "git": {
+        "remote": "https://github.com/bradyz/2020_CARLA_challenge.git",
+        "commit": "a05ab7b59c6c5b7d9adda16f04269329873e6709"
+    },
+    "email": "mailssondennis@gmail.com",
+    "codePath": "carla_project/src/map_model.py",
+    "startedAt": "2020-11-02T02:16:13.857197",
+    "host": "mailson-G3-3590",
+    "username": "mailson",
+    "executable": "/usr/bin/python3",
+    "os": "Linux-5.4.0-47-generic-x86_64-with-LinuxMint-19.3-tricia",
+    "python": "3.6.9",
+    "gpu": "GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "--dataset_dir",
+        "autopilot_dataset"
+    ],
+    "state": "failed",
+    "jobType": null,
+    "mode": "run",
+    "name": "2c6af0a77ef148cfb770178fd578c5d1",
+    "project": "stage_1",
+    "heartbeatAt": "2020-11-02T02:16:36.606087",
+    "exitcode": 1
+}
