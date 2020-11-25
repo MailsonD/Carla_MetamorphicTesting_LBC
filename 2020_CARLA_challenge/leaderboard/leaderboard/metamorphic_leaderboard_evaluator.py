@@ -436,23 +436,6 @@ class LeaderboardEvaluator(object):
             global_stats_record, self.sensor_icons, route_indexer.total, args.checkpoint)
 
 
-def start_evaluation(arguments):
-    print("Starting the evaluation")
-    print(arguments)
-
-    statistics_manager = StatisticsManager()
-
-    try:
-        leaderboard_evaluator = LeaderboardEvaluator(
-            arguments, statistics_manager)
-        leaderboard_evaluator.run(arguments)
-
-    except Exception as e:
-        traceback.print_exc()
-    finally:
-        del leaderboard_evaluator
-
-
 def main():
     description = "CARLA AD Leaderboard Evaluation: evaluate your Agent in CARLA scenarios\n"
 
