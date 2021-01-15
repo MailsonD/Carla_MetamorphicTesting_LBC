@@ -91,8 +91,6 @@ class AgentWrapper(object):
                     vehicle, sensor_spec['reading_frequency'])
             elif sensor_spec['type'].startswith('sensor.speedometer'):
                 delta_time = CarlaDataProvider.get_world().get_settings().fixed_delta_seconds
-                print("delta time")
-                print(delta_time)
                 frame_rate = 1 / delta_time
                 sensor = SpeedometerReader(vehicle, 30)
             # These are the sensors spawned on the carla world

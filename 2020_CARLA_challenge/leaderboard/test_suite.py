@@ -4,14 +4,6 @@ from argparse import RawTextHelpFormatter
 from leaderboard.leaderboard_evaluator import start_evaluation
 
 
-TEST_ROUTES = [
-    'leaderboard/data/routes_training/route_10.xml',
-    'leaderboard/data/routes_training/route_11.xml',
-    'leaderboard/data/routes_training/route_12.xml',
-    'leaderboard/data/routes_training/route_13.xml',
-]
-
-
 def main():
     print("opa")
     description = "CARLA AD Leaderboard Evaluation: evaluate your Agent in CARLA scenarios\n"
@@ -36,9 +28,9 @@ def main():
 
     # simulation setup
     # The routes will be setted for each execution on TEST_ROUTES
-    # parser.add_argument('--routes',
-    #                     help='Name of the route to be executed. Point to the route_xml_file to be executed.',
-    #                     required=True)
+    parser.add_argument('--routes',
+                        help='Name of the route to be executed. Point to the route_xml_file to be executed.',
+                        required=True)
     parser.add_argument('--scenarios',
                         help='Name of the scenario annotation file to be mixed with the route.',
                         required=True)
@@ -63,11 +55,11 @@ def main():
 
     arguments = parser.parse_args()
 
-    print("trying to add a new route")
+    # print("trying to add a new route")
 
-    arguments.routes = TEST_ROUTES[0]
+    # arguments.routes = TEST_ROUTES[0]
 
-    print(arguments)
+    # print(arguments)
     start_evaluation(arguments)
 
 

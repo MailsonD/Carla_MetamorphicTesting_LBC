@@ -26,6 +26,8 @@ import torchvision
 import carla
 import signal
 
+import asyncio
+
 from srunner.scenariomanager.carla_data_provider import *
 from srunner.scenariomanager.timer import GameTime
 from srunner.scenariomanager.watchdog import Watchdog

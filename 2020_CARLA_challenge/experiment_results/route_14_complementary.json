@@ -11,28 +11,33 @@
                 "route_dev": 0.0,
                 "route_timeout": 0.0,
                 "stop_infraction": 0.0,
-                "vehicle_blocked": 0.0
+                "vehicle_blocked": 0.6510733280321535
             },
             "meta": {
                 "exceptions": [
                     [
-                        "RouteScenario_10",
+                        "RouteScenario_14",
                         0,
-                        "Failed"
+                        "Failed - Agent got blocked"
+                    ],
+                    [
+                        "RouteScenario_14",
+                        1,
+                        "Failed - Agent got blocked"
                     ]
                 ]
             },
             "route_id": -1,
             "scores": {
-                "score_composed": 0.426115605955971,
+                "score_composed": 4.1901464648826146,
                 "score_penalty": 1.0,
-                "score_route": 0.426115605955971
+                "score_route": 4.1901464648826146
             },
             "status": "Failed"
         },
         "progress": [
-            1,
-            1
+            2,
+            2
         ],
         "records": [
             {
@@ -46,25 +51,55 @@
                     "route_dev": [],
                     "route_timeout": [],
                     "stop_infraction": [],
-                    "vehicle_blocked": []
+                    "vehicle_blocked": [
+                        "Agent got blocked at (x=-23.998, y=134.538, z=0.033)"
+                    ]
                 },
                 "meta": {
-                    "duration_game": 4.25,
-                    "duration_system": 6.412571668624878,
-                    "route_length": 1128.3240988201576
+                    "duration_game": 476.625,
+                    "duration_system": 797.7656698226929,
+                    "route_length": 733.7819628599541
                 },
-                "route_id": "RouteScenario_10",
+                "route_id": "RouteScenario_14",
                 "scores": {
-                    "score_composed": 0.426115605955971,
+                    "score_composed": 4.31666813148194,
                     "score_penalty": 1.0,
-                    "score_route": 0.426115605955971
+                    "score_route": 4.31666813148194
                 },
-                "status": "Failed"
+                "status": "Failed - Agent got blocked"
+            },
+            {
+                "index": 1,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [],
+                    "outside_route_lanes": [],
+                    "red_light": [],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [],
+                    "vehicle_blocked": [
+                        "Agent got blocked at (x=-24.108, y=134.573, z=0.033)"
+                    ]
+                },
+                "meta": {
+                    "duration_game": 210.125,
+                    "duration_system": 468.5051383972168,
+                    "route_length": 733.7819628599541
+                },
+                "route_id": "RouteScenario_14",
+                "scores": {
+                    "score_composed": 4.063624798283289,
+                    "score_penalty": 1.0,
+                    "score_route": 4.063624798283289
+                },
+                "status": "Failed - Agent got blocked"
             }
         ]
     },
     "eligible": true,
-    "entry_status": "Finished",
+    "entry_status": "Finished with agent errors",
     "labels": [
         "Avg. driving score",
         "Avg. route completion",
@@ -88,8 +123,8 @@
         "carla_speedometer"
     ],
     "values": [
-        "0.426",
-        "0.426",
+        "4.190",
+        "4.190",
         "1.000",
         "0.000",
         "0.000",
@@ -99,6 +134,6 @@
         "0.000",
         "0.000",
         "0.000",
-        "0.000"
+        "0.651"
     ]
 }

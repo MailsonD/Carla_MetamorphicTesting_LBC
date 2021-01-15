@@ -47,7 +47,7 @@ class Sun(object):
 
 class Storm(object):
     def __init__(self, precipitation):
-        self._t = precipitation if precipitation > 0.0 else -50.0
+        self._t = precipitation if precipitation > 0.0 else -25.0
         self._increasing = True
         self.clouds = 0.0
         self.rain = 0.0
@@ -60,7 +60,7 @@ class Storm(object):
 
     def tick(self, delta_seconds):
         delta = (1.3 if self._increasing else -1.3) * delta_seconds
-        self._t = clamp(delta + self._t, -250.0, 100.0)
+        self._t = clamp(delta + self._t, -20.0, 100.0)
         self.clouds = clamp(self._t + 40.0, 0.0, 90.0)
         self.rain = clamp(self._t, 0.0, 80.0)
         delay = -10.0 if self._increasing else 90.0
@@ -68,7 +68,7 @@ class Storm(object):
         self.wetness = clamp(self._t * 5, 0.0, 100.0)
         self.wind = 5.0 if self.clouds <= 20 else 90 if self.clouds >= 70 else 40
         self.fog = clamp(self._t - 10, 0.0, 30.0)
-        if self._t == -250.0:
+        if self._t == -20.0:
             self._increasing = True
         if self._t == 100.0:
             self._increasing = False
@@ -79,9 +79,9 @@ class Storm(object):
 
 class Weather(object):
     def __init__(self, weather, weatherConf):
-        print('ta indo bem')
-        print(weatherConf)
         self.weather = weather
+        print("precipitation")
+        print(weather.precipitation)
         self._chosedWeather = Sun(
             weather.sun_azimuth_angle, weather.sun_altitude_angle) if weatherConf == 'sun' else Storm(weather.precipitation)
 
@@ -100,8 +100,42 @@ class Weather(object):
         return '%s' % (self._chosedWeather)
 
 
-def init_storm_weather():
-    pass
+async def init_storm_weather():
+    print('opa')
+
+    args = {
+        'host': '127.0.0.1',
+        'port': 2000,
+        'speed': 1.0,
+        'weather': 'storm',
+    }
+
+    speed_factor = args.speed
+    update_freq = 0.1 / speed_factor
+
+    client = carla.Client(args.host, args.port)
+    client.set_timeout(2.0)
+    world = client.get_world()
+
+    print('ta indo')
+
+    weather = Weather(world.get_weather(), args.weather)
+
+    elapsed_time = 0.0
+
+    while True:
+        timestamp = world.wait_for_tick(seconds=30.0).timestamp
+        elapsed_time += timestamp.delta_seconds
+        if elapsed_time > update_freq:
+            weather.tick(speed_factor * elapsed_time)
+            world.set_weather(weather.weather)
+            sys.stdout.write('\r' + str(weather) + 12 * ' ')
+            sys.stdout.flush()
+            elapsed_time = 0.0
+        else:
+            print("acabou aqui")
+            print(elapsed_time)
+            print(update_freq)
 
 
 def main():
